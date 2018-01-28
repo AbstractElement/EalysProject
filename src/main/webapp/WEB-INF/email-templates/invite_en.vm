@@ -1,0 +1,18 @@
+<body bgcolor="#FFFFFF" leftmargin="40" topmargin="0" marginwidth="0" marginheight="0">
+<div>
+    <br>
+    <table>
+        <tr>
+            <td>Hello!</td>
+        </tr>
+        <tr>
+            <td>${invite.sender.firstName} ${invite.sender.lastName} has invited you to a project ${invite.project.name}!</td>
+        </tr>
+        <tr>
+            <td>
+                To accept the invitation, follow the link http://ealys.com/project/${invite.project.projectId}/activate?invite=${invite.token}.
+            </td>
+        </tr>
+    </table>
+</div>
+</body>

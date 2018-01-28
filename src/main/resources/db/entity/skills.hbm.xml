@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.sam_solutions.ealys.entity.Skill" table="skills">
+        <id column="skill_id" name="skillId" type="java.lang.Long">
+            <generator class="identity"/>
+        </id>
+        <property column="name" unique="true" name="name" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

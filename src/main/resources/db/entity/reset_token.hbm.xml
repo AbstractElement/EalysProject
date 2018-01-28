@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.sam_solutions.ealys.entity.ResetToken" table="tokens">
+        <id column="token_id" name="tokenId" type="java.lang.Long">
+            <generator class="identity"/>
+        </id>
+        <property column="email" length="40" name="email" type="java.lang.String"/>
+        <property column="token" length="50" name="token" type="java.lang.String"/>
+        <property column="date_create" name="dateCreate" type="java.util.Date"/>
+        <property column="date_activate" name="dateActivate" type="java.util.Date"/>
+        <property column="user_ip" length="20" name="userIP" type="java.lang.String"/>
+        <property column="enabled" name="enabled" type="java.lang.Byte"/>
+        <many-to-one column="user_id" name="user" class="com.sam_solutions.ealys.entity.User"/>
+    </class>
+</hibernate-mapping>

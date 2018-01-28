@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.sam_solutions.ealys.entity.Risk" table="risks">
+        <id column="risk_id" name="riskId" type="java.lang.Long">
+            <generator class="identity"/>
+        </id>
+        <many-to-one column="author" fetch="select" lazy="false" name="author" class="com.sam_solutions.ealys.entity.User"/>
+        <property column="name" name="name" type="java.lang.String"/>
+        <property column="description" name="description" type="java.lang.String"/>
+        <many-to-one column="project_id" fetch="select" name="project" class="com.sam_solutions.ealys.entity.Project"/>
+        <property column="danger_level" name="dangerLevel" type="java.lang.Integer"/>
+        </class>
+</hibernate-mapping>

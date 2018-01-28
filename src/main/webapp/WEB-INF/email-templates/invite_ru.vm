@@ -1,0 +1,18 @@
+<body bgcolor="#FFFFFF" leftmargin="40" topmargin="0" marginwidth="0" marginheight="0">
+<div>
+    <br>
+    <table>
+        <tr>
+            <td>Привет!</td>
+        </tr>
+        <tr>
+            <td>${invite.sender.firstName} ${invite.sender.lastName} приглашает вас на проект ${invite.project.name}!</td>
+        </tr>
+        <tr>
+            <td>
+                Для доступа к информации о проекте пройдите по ссылке: http://ealys.com/project/${invite.project.projectId}/activate?invite=${invite.token}.
+            </td>
+        </tr>
+    </table>
+</div>
+</body>

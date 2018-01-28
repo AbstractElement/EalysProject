@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.sam_solutions.ealys.entity.Invite" table="invites">
+        <id column="invite_id" name="inviteId" type="java.lang.Long">
+            <generator class="identity"/>
+        </id>
+        <many-to-one column="sender" name="sender" class="com.sam_solutions.ealys.entity.User"/>
+        <many-to-one column="project" name="project" class="com.sam_solutions.ealys.entity.Project"/>
+        <property column="email" length="40" name="email" type="java.lang.String"/>
+        <property column="token" length="50" name="token" type="java.lang.String"/>
+        <property column="date_of_deactivating" name="dateOfDeactivating" type="java.util.Date"/>
+    </class>
+</hibernate-mapping>

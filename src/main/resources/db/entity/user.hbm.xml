@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.sam_solutions.ealys.entity.User" table="users">
+        <id column="user_id" name="userId" type="java.lang.Long">
+            <generator class="identity"/>
+        </id>
+        <property column="email" unique="true" name="email" length="40" type="java.lang.String"/>
+        <property column="password" name="password" length="60" type="java.lang.String"/>
+        <property column="username" unique="true" length="25" name="username" type="java.lang.String"/>
+        <property column="first_name" name="firstName" length="45" type="java.lang.String"/>
+        <property column="last_name" name="lastName" length="45" type="java.lang.String"/>
+        <property column="organization_name" name="organizationName" type="java.lang.String"/>
+        <property column="position" name="position" type="java.lang.String"/>
+        <property column="phone_number" name="phoneNumber" length="25" type="java.lang.String"/>
+        <property column="sex" name="sex" length="10" type="java.lang.String"/>
+        <property column="age" name="age" type="java.lang.Integer"/>
+        <property column="about" name="about" type="java.lang.String" length="1000"/>
+        <property column="photo" name="photo" length="50" type="java.lang.String"/>
+        <property column="enabled" name="enabled" type="java.lang.Byte"/>
+        <bag name="skills" table="skills_users" lazy="true" fetch="select" cascade="all" >
+            <key>
+                <column name="user_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.sam_solutions.ealys.entity.Skill">
+                <column name="skill_id" not-null="true" />
+            </many-to-many>
+        </bag>
+    </class>
+</hibernate-mapping>

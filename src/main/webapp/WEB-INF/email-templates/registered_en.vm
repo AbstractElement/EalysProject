@@ -1,0 +1,18 @@
+<body bgcolor="#FFFFFF" leftmargin="40" topmargin="0" marginwidth="0" marginheight="0">
+    <div>
+        <br>
+        <table>
+           <tr>
+               <td>Hello! ${user.firstName}</td>
+           </tr>
+            <tr>
+                <td>You have successfuly registered in Ealys!</td>
+            </tr>
+            <tr>
+                <td>
+                    Your login: ${user.username}
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>

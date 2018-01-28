@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.sam_solutions.ealys.entity.Role" table="roles">
+        <id column="role_id" name="roleId" type="java.lang.Long">
+            <generator class="identity"/>
+        </id>
+        <property column="role" name="role" length="40" type="java.lang.String"/>
+        <many-to-one column="user" cascade="save-update" name="user" class="com.sam_solutions.ealys.entity.User"/>
+    </class>
+</hibernate-mapping>
